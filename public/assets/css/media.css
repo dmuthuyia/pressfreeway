@@ -1,0 +1,64 @@
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+body {
+  background-color: #f4f4fa;
+}
+
+.mediatab1 {
+  background-color: #ffffff;
+}
+
+.mediatab2 {
+}
+
+.mediatab2 p {
+  font-size: 14px;
+}
+
+.mediatab2 H3 {
+  font-size: 18px;
+  font-style: initial;
+  font-weight: bold;
+}
+
+.newsHeader1 {
+  /*font-family: "Ubuntu Condensed";
+  font-family: "Eagle Lake";*/
+}
+
+.newsHeader1 a {
+  font-family: "Ubuntu Condensed";
+  font-size: 18px;
+  color: black;
+  font-weight: lighter;
+}
+
+.interactionTab-1 {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.page-margin {
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.flex1 {
+  display: flex;
+}
+
+.flex-botton {
+  display: flex;
+}
+
+.flex-botton {
+  display: flex;
+}
+
+.clearfix1 {
+  all: none;
+}
