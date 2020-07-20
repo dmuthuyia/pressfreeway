@@ -1,5 +1,5 @@
 <?php
-namespace arodhaavms;
+namespace pressfreeway;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,14 +13,14 @@ class Cart extends Model
     public function Tokens()
     {
 
-        return $this->belongsTo('arodhaavms\Token', 'token_id');
+        return $this->belongsTo('pressfreeway\Token', 'token_id');
 
     }
 
     public function User()
     {
 
-        return $this->belongsTo('arodhaavms\User', 'user_id');
+        return $this->belongsTo('pressfreeway\User', 'user_id');
 
     }
 

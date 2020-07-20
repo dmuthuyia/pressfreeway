@@ -1,9 +1,9 @@
 <?php
 
-namespace arodhaavms\Http\Controllers;
+namespace pressfreeway\Http\Controllers;
 
-use arodhaavms\Cart;
-use arodhaavms\Token;
+use pressfreeway\Cart;
+use pressfreeway\Token;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;

@@ -1,10 +1,11 @@
 <?php
-use arodhaavms\Token;
-use arodhaavms\User;
 use Carbon\Carbon;
-use Carbon\Category1;
-//use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Input;
+use pressfreeway\Subcategory1;
+use pressfreeway\Subcategory2;
+//use Illuminate\Support\Facades\Input;
+use pressfreeway\Token;
+use pressfreeway\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -212,9 +213,9 @@ Route::group(['middleware' => ['web']], function () {
 
 // article ********************************************************
 
-    Route::get('/article', [
+    Route::get('/articles', [
         'uses' => 'articleController@getIndex',
-        'as' => 'article',
+        'as' => 'articles',
         //'middleware' => 'auth'
 
     ]);
@@ -228,12 +229,12 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::post('/article/new/post', [
         'uses' => 'articleController@postNew',
-        //'as' => 'article.post',
+        'as' => 'article.post',
         //'middleware' => 'auth'
 
     ]);
 
-    Route::get('/article/show/{id}', [
+    Route::get('/article/{id}', [
         'uses' => 'articleController@getShow',
         //'as' => 'article.show',
         //'middleware' => 'auth'
@@ -294,19 +295,19 @@ Route::group(['middleware' => ['web']], function () {
         $cat_id = Input::get('cat_id');
         //$cat_id = $request['email'];
 
-        $subsong = Subcategory1::where('category_id', '=', $cat_id)->get();
+        $subcat = Subcategory1::where('category1_id', '=', $cat_id)->get();
 
         return Response::json($subcat);
 
     });
 
-    Route::get('/ajax-software', function () {
-        $subcat_id = Input::get('subcat_id');
+    Route::get('/ajax-subcat2', function () {
+        $cat2_id = Input::get('cat2_id');
         //$cat_id = $request['email'];
 
-        $services = Product::where('subcategory_id', '=', $subcat_id)->get();
+        $subcat2 = Subcategory2::where('category2_id', '=', $cat2_id)->get();
 
-        return Response::json($services);
+        return Response::json($subcat2);
 
     });
 

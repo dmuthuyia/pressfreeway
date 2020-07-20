@@ -1,6 +1,6 @@
 <?php
 
-namespace arodhaavms\Exceptions;
+namespace pressfreeway\Exceptions;
 
 use Exception;
 use Illuminate\Validation\ValidationException;

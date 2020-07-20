@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <title>Arodha AVMS</title>
+    <title>Pressfreeway</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" type="text/css" href="{{ URL::to('../assets/bootstrap/css/bootstrap.min.css') }} ">
-    <link rel="stylesheet" type="text/css" href="{{ URL::to('../assets/fontawesome/css/all.css') }} ">
+
     <link rel="stylesheet" type="text/css" href="{{ URL::to('../assets/css/animate.css') }} ">
     <link rel="stylesheet" type="text/css" href="{{ URL::to('../assets/css/thadmatrix.css') }} ">
 
@@ -33,10 +33,10 @@
     <script src="{{ URL::to('../assets/js/moment.js') }} "></script>
 
 
-    <script src="{{ URL::to('../assets/js/jssor.slider-22.2.16.min.js') }} "></script>
     <script src="{{ URL::to('../assets/js/viewportchecker.js') }} "></script>
 
     <script src="https://cdn.tiny.cloud/1/gelzsentzld05z3orgdhf9g8g4jylco884kw9bnzcpip8wu3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
 
 </head>
 
@@ -49,19 +49,21 @@
     </div>
 
     <div class="dX" style="height: 80px; width:100%; background-color: red; " >
-        <div class="dY-3" style="display: flex; align-items: left; justify-content: left; overflow:hidden;">
-            <a href="{{ route('home') }}" style=""><img style="width: 80px; padding: 5px; border-radius: 15px;" src="../assets/images/app/irg-logo.jpg"></img></a> <span style="height:80px; line-height: 80px;font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif; font-size: 30px;">INFOMEDIA RESEARCH GROUP</span>
+            <div class="dY-3" style="display: flex; align-items: left; justify-content: left; overflow:hidden;">
+            <a href="{{ route('home') }}" style=""><img style="width: 80px; padding: 5px; border-radius: 15px;" src="../assets/images/app/press-freeway.png"></img></a> <span style="height:80px; line-height: 80px;font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif; font-size: 30px; color: #000000;">Pressfreeway</span>
                 @include('includes.mobimenu_B2')
             </div>
-            <div class="dY-2">
+            <div class="dY-1">
 
             </div>
-            <div class="dY-1 dxy-action-btns-tab-1" style=" ">
-            <span style="font-size: 12px; color: #fff; padding-right: 10px;">Polls</span>
-            <a style="width: 100%;" href="" id="polls" target="_blank"><img class="" style="width:40px;" src="../assets/images/social/polls.png" alt="LinkedIn" /></a>
-            <span style="font-size: 12px; color: #fff; padding-right: 10px;">write article</span>
-            <a style="width: 100%;" href="{{ route('article.new') }}" id="new article" target="_blank"><img class="" style="width:40px;" src="../assets/images/social/new-article.png" alt="new article" /></a>
-        </div>
+            <div class="dY-2 dxy-action-btns-tab-1" style=" ">
+            <span style="font-size: 12px; color: #fff; padding-right: 5px;">Polls</span>
+            <a style="width: 100%;" href="" id="polls"><img class="" style="width:40px;" src="../assets/images/social/polls.png" alt="LinkedIn" /></a>
+            <span style="font-size: 12px; color: #fff; padding-right: 5px;">write article</span>
+            <a style="width: 100%;" href="{{ route('article.new') }}" id="new article"><img class="" style="width:40px;" src="../assets/images/social/new-article.png" alt="new article" /></a>
+            <span style="font-size: 12px; color: #fff; padding-right: 5px;">all articles</span>
+            <a style="width: 100%;" href="{{ route('articles') }}" id="new article"><img class="" style="width:40px;" src="../assets/images/social/archive.png" alt="new article" /></a>
+            </div>
 
     </div>
     <!-- ************************Menu********************************* -->

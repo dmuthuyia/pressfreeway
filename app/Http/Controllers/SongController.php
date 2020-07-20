@@ -1,7 +1,7 @@
 <?php
-namespace arodhaavms\Http\Controllers;
+namespace pressfreeway\Http\Controllers;
 
-use arodhaavms\Song;
+use pressfreeway\Song;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\File;

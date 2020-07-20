@@ -1,7 +1,7 @@
 <?php
-namespace arodhaavms\Http\Controllers;
+namespace pressfreeway\Http\Controllers;
 
-use arodhaavms\Message;
+use pressfreeway\Message;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;

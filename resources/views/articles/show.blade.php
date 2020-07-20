@@ -1,4 +1,4 @@
-@extends('layouts.nyumba')
+@extends('layouts.nyumbaDeck')
 
 @section('kichwa')
 
@@ -8,53 +8,29 @@
 
 @section('sebule')
 
-<div class="divfold50">
-	<div class="divfold50read">
-		
-		<div class="row">
 
-			<div class="col-md-6">
-
-				<div style="height: 400; width: 400;">
-					<div class="fireplace2showimage">
-					<img src="<?php echo asset("uploads/articles/$article->article_img")?>"></img>
-					</div>
-				
-				</div>
+<div class="dX dxy-border-4">
+		<div class="dY-5 mediatab2">
+			<div>
+				<span style="font-weight: bold; font-size: 20px;"> {{$article->title}} </span>
 			</div>
+			<div>
+				<img class="image-t-left" style="width: 40%;" src="<?php echo asset("uploads/articles/$article->article_img") ?>"></img>
 
-			<div class="col-md-6" style="text-align: center;">
-				<h1>{{ $article->title }}</h1>
-			</div>
+<?php
 
-	    </div>
-
-	    <hr>
-
-	    <div class="row">
-			
-			<div class="col-md-12">
-
-
-                                <?php 
-
-		                        	echo (nl2br(e(substr($article->body, 0, 300) . '......')))
-								?>
-
-		
-
-
-
-			
-		    </div>
-
-	    </div>
-
-
-	</div>
+$formatted_article_body = htmlspecialchars_decode($article->article_body);
+//{!! $my_db_ish['$formatted_article_body'] !!}
+//$formatted_article_body = stripslashes($article_body);
+echo ($formatted_article_body);
+?>
 </div>
+			</div>
 
+		<div class="dY-1">
 
+		</div>
+</div>
 
 
 @endsection

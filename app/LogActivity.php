@@ -1,6 +1,6 @@
 <?php
 
-namespace arodhaavms;
+namespace pressfreeway;
 
 use Illuminate\Database\Eloquent\Model;
 

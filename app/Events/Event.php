@@ -1,6 +1,6 @@
 <?php
 
-namespace arodhaavms\Events;
+namespace pressfreeway\Events;
 
 abstract class Event
 {

@@ -1,7 +1,7 @@
 <?php
-namespace arodhaavms\Http\Controllers;
+namespace pressfreeway\Http\Controllers;
 
-use arodhaavms\Subcategory1;
+use pressfreeway\Subcategory1;
 
 use Image;
 use Illuminate\Http\Request;

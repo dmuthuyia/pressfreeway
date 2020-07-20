@@ -1,8 +1,8 @@
 <?php
 
-namespace arodhaavms\Providers;
+namespace pressfreeway\Providers;
 
-use arodhaavms\Article;
+use pressfreeway\Article;
 use Illuminate\Support\ServiceProvider;
 use View;
 

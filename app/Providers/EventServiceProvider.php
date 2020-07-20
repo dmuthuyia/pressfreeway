@@ -1,6 +1,6 @@
 <?php
 
-namespace arodhaavms\Providers;
+namespace pressfreeway\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'arodhaavms\Events\SomeEvent' => [
-            'arodhaavms\Listeners\EventListener',
+        'pressfreeway\Events\SomeEvent' => [
+            'pressfreeway\Listeners\EventListener',
         ],
     ];
 

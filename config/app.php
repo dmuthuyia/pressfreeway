@@ -151,10 +151,10 @@ return [
         /*
          * Application Service Providers...
          */
-        arodhaavms\Providers\AppServiceProvider::class,
-        arodhaavms\Providers\AuthServiceProvider::class,
-        arodhaavms\Providers\EventServiceProvider::class,
-        arodhaavms\Providers\RouteServiceProvider::class,
+        pressfreeway\Providers\AppServiceProvider::class,
+        pressfreeway\Providers\AuthServiceProvider::class,
+        pressfreeway\Providers\EventServiceProvider::class,
+        pressfreeway\Providers\RouteServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         'Collective\Html\HtmlServiceProvider',
 

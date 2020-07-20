@@ -50,12 +50,25 @@
     <li><a href="{{ route('contact') }}">Education</a></li>
     <li><a href="{{ route('contact') }}">Agriculture</a></li>
 
+    @if(!Auth::check())
     <li style="float: right; width: 90px;"><a href="">Account</a>
           <ul class="wazo17submenu" style="width:90px;">
+
             <li><a href="{{ route('registration form') }}" style="width:90px;">Sign up</a></li>
-            <li><a href="{{ route('signin') }}" style="width:90px;">login</a></li>
+            <li><a href="{{ route('signinfrm') }}" style="width:90px;">login</a></li>
           </ul>
     </li>
+    @else
+    <li style="float: right; width: 90px;"><a href="">{{Auth::user()->FirstName}}</a>
+          <ul class="wazo17submenu" style="width:90px;">
+
+            <li><a href="{{ route('profile') }}" style="width:90px;">Profile</a></li>
+
+            <li><a href="{{ route('logout') }}" style="width:90px;">Logout</a></li>
+          </ul>
+    </li>
+    @endif
+
   </ul>
 
 </div>

@@ -12,7 +12,7 @@
 <div class="divfold50read">
 	<h2 style="text-align: center;">Add new Article</h2>
 
-<form enctype="multipart/form-data" role="form" method="POST" action="{{ url('magazine/article/post') }}">
+<form enctype="multipart/form-data" role="form" method="POST" action="{{ url('article/new/post') }}">
 
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -34,7 +34,7 @@
             <div class="field">
                 <label for="body">Body</label>
 
-                <textarea id="bodyField" type="text" class="form-control" name="body" ></textarea>
+                <textarea id="bodyField" type="text" class="form-control" name="article_body" ></textarea>
 
                 @if ($errors->has('body'))
                     <span class="help-block">
@@ -59,9 +59,11 @@
 
                             <label for="offence">Region: </label><br>
 
-                            <select class="form-control" name="category" id="breeze2">
+                            <select class="select-breeze" name="category1" id="category1">
 
-                                <option value="Africa">Africa</option>
+                                @foreach($category1 as $region)
+                                <option value="{{$region->id}}">{{$region->title}}</option>
+                                @endforeach
 
                             </select>
 
@@ -72,9 +74,9 @@
                         <div class="dY-6" >
                             <label for="offence">Country: </label><br>
 
-                            <select class="form-control" name="subcategory" id="breeze2">
+                            <select class="select-breeze" name="subcategory1" id="subcategory1">
 
-                                <option value="Kenya">Kenya</option>
+                                <option value="1">Select</option>
 
                             </select>
                         </div>
@@ -96,9 +98,11 @@
                         <div class="dY-6" >
                             <label for="offence">Topic: </label><br>
 
-                            <select class="form-control" name="category2" id="breeze2">
+                            <select class="select-breeze" name="category2" id="category2">
 
-                                <option value="Sport">Sport</option>
+                                @foreach($category2 as $topic)
+                                <option value="{{$topic->id}}">{{$topic->title}}</option>
+                                @endforeach
 
                             </select>
                         </div>
@@ -108,9 +112,9 @@
                         <div class="dY-6" >
                             <label for="offence">Sub topic: </label><br>
 
-                            <select class="form-control" name="subcategory2" id="breeze2">
+                            <select class="select-breeze" name="subcategory2" id="subcategory2">
 
-                                <option value="Fooball">Fooball</option>
+                                <option value="1">select</option>
 
                             </select>
                         </div>
@@ -153,18 +157,19 @@
 
 
 <script type="text/javascript">
-$('#category').on('change focus hover', function(e) {
-    console.log(e);
-
+$('#category1').on('change focus hover', function(e) {
+    //console.log(e);
+    //alert("hello");
     var cat_id = e.target.value;
 
     //ajax
     $.get('/ajax-subcat?cat_id=' + cat_id, function(data) {
         //success data
         //console.log(data);
-        $('#subcategory').empty();
+        //alert(data);
+        $('#subcategory1').empty();
         $.each(data, function(index, subcatObj) {
-            $('#subcategory').append('<option value="' + subcatObj.id + '">' + subcatObj.name +
+            $('#subcategory1').append('<option value="' + subcatObj.id + '">' + subcatObj.title +
                 '</option>');
         });
     });
@@ -174,18 +179,20 @@ $('#category').on('change focus hover', function(e) {
 
 
 
-$('#subcategory').on('change focus hover', function(e) {
-    console.log(e);
-
-    var subcat_id = e.target.value;
+$('#category2').on('change focus hover', function(e) {
+    //console.log(e);
+    //alert("hello");
+    var cat2_id = e.target.value;
 
     //ajax
-    $.get('/ajax-softwares?subcat_id=' + subcat_id, function(data) {
+    $.get('/ajax-subcat2?cat2_id=' + cat2_id, function(data) {
         //success data
         //console.log(data);
-        $('#service').empty();
-        $.each(data, function(index, serviceObj) {
-            $('#service').append('<option value="' + serviceObj.id + '">' + serviceObj.title +
+
+        //alert(data);
+        $('#subcategory2').empty();
+        $.each(data, function(index, subcatObj) {
+            $('#subcategory2').append('<option value="' + subcatObj.id + '">' + subcatObj.title +
                 '</option>');
         });
     });

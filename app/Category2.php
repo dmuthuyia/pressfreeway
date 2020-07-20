@@ -1,5 +1,5 @@
 <?php
-namespace arodhaavms;
+namespace pressfreeway;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,7 +13,7 @@ class Category2 extends Model
 
     public function Articles()
     {
-        return $this->hasMany('arodhaavms\Article');
+        return $this->hasMany('pressfreeway\Article');
     }
 
      

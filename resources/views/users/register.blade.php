@@ -1,4 +1,4 @@
-@extends('layouts.nyumba')
+@extends('layouts.nyumbaDeck')
 
 @section('kichwa')
 
@@ -9,23 +9,26 @@
 @section('sebule')
 
 
+<div class="dX">
+
+    <div class="dY-6">
 
 
 
 
 
-                    <form enctype="multipart/form-data" class="form-horizontal" role="form" method="POST" action="{{ route('signup') }}">
+    <form enctype="multipart/form-data" class="form-horizontal" role="form" method="POST" action="{{ route('signup') }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         {{ csrf_field() }}
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 
-                    <div class="divfold50">
-                    <div class="col-md-6">
+                    <div class="" >
+                    <div class="col-md-6" >
 
 
 
-        <div class="divfold50inner1">
+        <div class="divfold50inner1" style="boarder-radius: 5px; border: 0px black solid; padding-left 10px; background: #fff;" >
 
 
 
@@ -579,6 +582,20 @@ echo '</select>' . PHP_EOL;
 
                     {!! csrf_field() !!}
                     </form>
+
+
+
+
+
+
+
+
+    </div>
+
+</div>
+
+
+
 
 
 @endsection

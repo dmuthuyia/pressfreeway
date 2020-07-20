@@ -1,5 +1,5 @@
 <?php
-namespace arodhaavms;
+namespace pressfreeway;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,7 +12,7 @@ class Order extends Model
 
     public function orderItems()
     {
-        return $this->belongsToMany('arodhaavms\Token', 'order_product')->withPivot('amount', 'price', 'total');
+        return $this->belongsToMany('pressfreeway\Token', 'order_product')->withPivot('amount', 'price', 'total');
     }
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace arodhaavms;
+namespace pressfreeway;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -18,27 +18,27 @@ class User extends Model implements Authenticatable
 
     public function cart()
     {
-        return $this->hasMany('arodhaavms\Cart');
+        return $this->hasMany('pressfreeway\Cart');
     }
 
     public function token()
     {
-        return $this->hasMany('arodhaavms\Token');
+        return $this->hasMany('pressfreeway\Token');
     }
 
     public function Articles()
     {
-        return $this->hasMany('arodhaavms\Article');
+        return $this->hasMany('pressfreeway\Article');
     }
 
     public function Views()
     {
-        return $this->hasMany('arodhaavms\Article');
+        return $this->hasMany('pressfreeway\Article');
     }
 
     public function Reactions()
     {
-        return $this->hasMany('arodhaavms\Reactions');
+        return $this->hasMany('pressfreeway\Reactions');
     }
     /**
      * The attributes that should be hidden for arrays.

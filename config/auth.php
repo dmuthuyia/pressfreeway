@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => arodhaavms\User::class,
+            'model' => pressfreeway\User::class,
         ],
 
         // 'users' => [

@@ -1,5 +1,5 @@
 <?php
-namespace arodhaavms;
+namespace pressfreeway;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,19 +11,19 @@ class Reactions extends Model
 
     public function Article()
     {
-        return $this->belongsTo('arodhaavms\Article');
+        return $this->belongsTo('pressfreeway\Article');
         
     }
 
       public function Reaction()
     {
-        return $this->belongsTo('arodhaavms\Reaction');
+        return $this->belongsTo('pressfreeway\Reaction');
     }
 
 
       public function User()
     {
-        return $this->belongsTo('arodhaavms\User');
+        return $this->belongsTo('pressfreeway\User');
     }
 
 }

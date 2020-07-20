@@ -1,6 +1,6 @@
 <?php
 
-namespace arodhaavms\Http;
+namespace pressfreeway\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -24,11 +24,11 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \arodhaavms\Http\Middleware\EncryptCookies::class,
+            \pressfreeway\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \arodhaavms\Http\Middleware\VerifyCsrfToken::class,
+            \pressfreeway\Http\Middleware\VerifyCsrfToken::class,
         ],
 
         'api' => [
@@ -44,10 +44,10 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \arodhaavms\Http\Middleware\Authenticate::class,
+        'auth' => \pressfreeway\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
-        'guest' => \arodhaavms\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \pressfreeway\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
 }

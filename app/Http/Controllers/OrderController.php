@@ -1,10 +1,10 @@
 <?php
 
-namespace arodhaavms\Http\Controllers;
+namespace pressfreeway\Http\Controllers;
 
-use arodhaavms\Cart;
-use arodhaavms\Order;
-use arodhaavms\Token;
+use pressfreeway\Cart;
+use pressfreeway\Order;
+use pressfreeway\Token;
 
 //use aerobusinessconsultancy\Whistle;
 use Illuminate\Support\Facades\Auth;

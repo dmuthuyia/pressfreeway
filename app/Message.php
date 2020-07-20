@@ -1,5 +1,5 @@
 <?php
-namespace arodhaavms;
+namespace pressfreeway;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,7 +11,7 @@ class Message extends Model
 
     public function user()
     {
-        return $this->belongsTo('arodhaavms\User');
+        return $this->belongsTo('pressfreeway\User');
     }
 
 }

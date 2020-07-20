@@ -1,4 +1,4 @@
-@extends('layouts.nyumba')
+@extends('layouts.nyumbaDeck')
 
 @section('kichwa')
 

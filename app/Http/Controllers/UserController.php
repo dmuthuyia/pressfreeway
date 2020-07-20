@@ -1,16 +1,17 @@
 <?php
-namespace arodhaavms\Http\Controllers;
+namespace pressfreeway\Http\Controllers;
 
 //use Flash;
 
-use arodhaavms\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use pressfreeway\User;
 use Validator;
 use View;
 
@@ -58,7 +59,7 @@ class UserController extends Controller
         //$is_female = (isset($_POST['is_female']) == '1' ? '1' : '0');
         $is_female = $request->input('is_female');
 
-        $is_kenyan = $request->input('is_kenyan');
+        //$is_kenyan = $request->input('is_kenyan');
         $Country = $request['Country'];
         $City = $request['City'];
         $origin = $request['origin'];
@@ -80,7 +81,7 @@ class UserController extends Controller
 
         $user->is_female = $is_female;
 
-        $user->is_kenyan = $is_kenyan;
+        //$user->is_kenyan = $is_kenyan;
         $user->Country = $Country;
         $user->City = $City;
         $user->origin = $origin;
@@ -119,7 +120,7 @@ class UserController extends Controller
 
         //Mail::send('mails.verify', $thisdata, function($message) use ($thisdata){
 
-        //$message->from('arodhaavms@kenyan-love.com');
+        //$message->from('pressfreeway@kenyan-love.com');
         //$message->to($thisdata['email']);
         //$message->subject('Verify your email address');
 
@@ -144,7 +145,7 @@ class UserController extends Controller
 
         // if the validator fails, redirect back to the form
         if ($validator->fails()) {
-            return Redirect::to('token')
+            return Redirect::to('signinfrm')
                 ->withErrors($validator) // send back all errors to the login form
                 ->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
 
@@ -184,21 +185,47 @@ class UserController extends Controller
 
             }*/
 
-            $em = $request['email'];
-            $pw = $request['password'];
-            $user = User::where('email', '=', $em)->where('password', '=', $pw)->first();
+            //$em = $request['email'];
+            //$pw = $request['password'];
+            //$user = User::where('email', '=', $em)->where('password', '=', $pw)->first();
+
+            //$user = User::where('email', '=', 'email@address.com')->first();
+            //Hash::check('INPUT PASSWORD', $user->password);
             //if (count($user)) { or
             //if ($user->count()) {
-            if ($user) {
+
+            //$email = $request->input('email');
+            //$password = $request->input('password');
+
+            $email = $request['email'];
+            $password = $request['password'];
+
+            $user = User::where('email', '=', $email)->first();
+            if (!$user) {
+                //return response()->json(['success' => false, 'message' => 'Login Fail, please check email id']);
+                echo 'Failed! Check email and password';
+            }
+            if (!Hash::check($password, $user->password)) {
+                //return response()->json(['success' => false, 'message' => 'Login Fail, pls check password']);
+                echo 'Failed! Check email and password';
+            } else {
+                //return response()->json(['success' => true, 'message' => 'success', 'data' => $user]);
                 Auth::loginUsingId($user->id, true);
                 //Auth::login($user);
                 //echo 'SUCCESS!';
-                return redirect()->route('token');
-            } else {
-                // validation not successful, send back to form
-                //return Redirect::to('token');
-                echo 'Failed!';
+                return redirect()->route('home');
             }
+
+            /*if ($user) {
+        Auth::loginUsingId($user->id, true);
+        //Auth::login($user);
+        //echo 'SUCCESS!';
+        return redirect()->route('token');
+        } else {
+        // validation not successful, send back to form
+        //return Redirect::to('token');
+        echo 'Failed!';
+        }*/
 
         }
     }

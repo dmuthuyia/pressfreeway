@@ -1,9 +1,9 @@
 <?php
 
 
-namespace arodhaavms\Helpers;
+namespace pressfreeway\Helpers;
 use Request;
-use arodhaavms\LogActivity as LogActivityModel;
+use pressfreeway\LogActivity as LogActivityModel;
 
 
 class LogActivity

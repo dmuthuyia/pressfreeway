@@ -1,8 +1,8 @@
 <?php
 
-namespace arodhaavms\Http\Controllers;
+namespace pressfreeway\Http\Controllers;
 
-use arodhaavms\Token;
+use pressfreeway\Token;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Mail;

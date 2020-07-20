@@ -1,5 +1,5 @@
 <?php
-namespace arodhaavms;
+namespace pressfreeway;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,7 +12,7 @@ class Reaction extends Model
 
     public function Reactions()
     {
-        return $this->hasMany('arodhaavms\Reactions');
+        return $this->hasMany('pressfreeway\Reactions');
     }
 
 

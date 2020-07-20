@@ -1,6 +1,6 @@
 <?php
 
-namespace arodhaavms\Http\Controllers;
+namespace pressfreeway\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

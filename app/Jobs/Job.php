@@ -1,6 +1,6 @@
 <?php
 
-namespace arodhaavms\Jobs;
+namespace pressfreeway\Jobs;
 
 use Illuminate\Bus\Queueable;
 

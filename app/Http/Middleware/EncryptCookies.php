@@ -1,6 +1,6 @@
 <?php
 
-namespace arodhaavms\Http\Middleware;
+namespace pressfreeway\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

@@ -1,9 +1,9 @@
 <?php
 
 
-namespace arodhaavms\Http\Controllers;
+namespace pressfreeway\Http\Controllers;
 
-use arodhaavms\LogActivity;
+use pressfreeway\LogActivity;
 
 use Illuminate\Http\Request;
 

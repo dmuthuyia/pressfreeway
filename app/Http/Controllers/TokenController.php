@@ -1,8 +1,8 @@
 <?php
-namespace arodhaavms\Http\Controllers;
+namespace pressfreeway\Http\Controllers;
 
-use arodhaavms\Song;
-use arodhaavms\Token;
+use pressfreeway\Song;
+use pressfreeway\Token;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\File;

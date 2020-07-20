@@ -1,6 +1,6 @@
 <?php
 
-namespace arodhaavms\Http\Middleware;
+namespace pressfreeway\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

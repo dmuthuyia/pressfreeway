@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => arodhaavms\User::class,
+        'model' => pressfreeway\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

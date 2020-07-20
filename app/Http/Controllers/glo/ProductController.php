@@ -1,13 +1,13 @@
 <?php
 
-namespace arodhaavms\Http\Controllers;
+namespace pressfreeway\Http\Controllers;
 
 
-use arodhaavms\Product;
+use pressfreeway\Product;
 
 use Image;
 use Illuminate\Http\Request;
-use arodhaavms\Http\Requests;
+use pressfreeway\Http\Requests;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;

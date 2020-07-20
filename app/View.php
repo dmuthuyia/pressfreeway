@@ -1,5 +1,5 @@
 <?php
-namespace arodhaavms;
+namespace pressfreeway;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,7 +11,7 @@ class View extends Model
 
     public function Article()
     {
-        return $this->belongsTo('arodhaavms\Article');
+        return $this->belongsTo('pressfreeway\Article');
     }
 
 }
