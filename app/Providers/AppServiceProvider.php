@@ -2,8 +2,8 @@
 
 namespace pressfreeway\Providers;
 
-use pressfreeway\Article;
 use Illuminate\Support\ServiceProvider;
+use pressfreeway\Article;
 use View;
 
 class AppServiceProvider extends ServiceProvider
@@ -16,13 +16,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        view()->composer('layouts.nyumbaHome', function ($view) {
+        view()->composer('layouts.nyumbaMonday', function ($view) {
             $articles = Article::orderBy('created_at', 'desc')->take(2)->get();
 
             $view->with(['articles' => $articles]);
         });
 
-        view()->composer('layouts.nyumba', function ($view) {
+        view()->composer('layouts.nyumbaTuesday', function ($view) {
             $articles = Article::all();
 
             $view->with(['articles' => $articles]);

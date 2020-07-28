@@ -8,7 +8,7 @@
 
   margin-top: 0px;
   z-index: 999;
-  position: relative;
+  position: fixed;
   overflow: visible;
 }
 
@@ -83,4 +83,17 @@
 
 .wazo17 ul li:hover > ul li:hover > ul {
   display: block;
+}
+
+.toolbar1 {
+  min-height: 80px;
+  width: 100%;
+  background-color: red;
+  margin-top: 35px;
+}
+
+@media (max-width: 1200px) {
+  .toolbar1 {
+    margin-top: 0px;
+  }
 }

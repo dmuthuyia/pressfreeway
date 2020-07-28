@@ -2,8 +2,8 @@
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Input;
 use pressfreeway\Subcategory1;
-use pressfreeway\Subcategory2;
 //use Illuminate\Support\Facades\Input;
+use pressfreeway\Subcategory2;
 use pressfreeway\Token;
 use pressfreeway\User;
 
@@ -29,7 +29,7 @@ Route::group(['middleware' => ['web']], function () {
     //});
 
     Route::get('/', [
-        'uses' => 'DdsController@getHome',
+        'uses' => 'DdsController@getMonday',
         'as' => 'home',
 
     ]);
@@ -214,41 +214,41 @@ Route::group(['middleware' => ['web']], function () {
 // article ********************************************************
 
     Route::get('/articles', [
-        'uses' => 'articleController@getIndex',
+        'uses' => 'ArticleController@getIndex',
         'as' => 'articles',
         //'middleware' => 'auth'
 
     ]);
 
     Route::get('/article/new', [
-        'uses' => 'articleController@getNew',
+        'uses' => 'ArticleController@getNew',
         'as' => 'article.new',
         //'middleware' => 'auth'
 
     ]);
 
     Route::post('/article/new/post', [
-        'uses' => 'articleController@postNew',
+        'uses' => 'ArticleController@postNew',
         'as' => 'article.post',
         //'middleware' => 'auth'
 
     ]);
 
     Route::get('/article/{id}', [
-        'uses' => 'articleController@getShow',
+        'uses' => 'ArticleController@getShow',
         //'as' => 'article.show',
         //'middleware' => 'auth'
 
     ]);
 
     Route::post('/update/article', [
-        'uses' => 'articleController@updatearticle',
+        'uses' => 'ArticleController@updatearticle',
         //'as' => 'article.update'
 
     ]);
 
     Route::get('/article/delete/{id}', [
-        'uses' => 'articleController@deletearticle',
+        'uses' => 'ArticleController@deletearticle',
         //'as' => 'article.update'
 
     ]);

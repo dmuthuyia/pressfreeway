@@ -54,7 +54,7 @@
                     <a href="{{ route('home') }}" style=""><img style="width: 100px;" src="../assets/images/app/press-freeway.png"></img></a>
                 </div>
                 <div class="dY-5" style="overflow: visible;">
-                    <div style="height:100px; background:red; position: relative; width: 100%"> @include('includes.wazo17')</div>
+                    <div style="height:100px; background:red; position: relative; width: 100%"> </div>
                 </div>
             </div>
 

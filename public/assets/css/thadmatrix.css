@@ -1821,6 +1821,31 @@ select#breeze2 {
    
 }
 
+
+.footer-upper{
+  background-color: #800000;
+  color: #ffffff;
+
+ 
+}
+.footer-upper li a {
+  text-decoration: none;
+  color: #ffffff;
+ 
+}
+
+.footer-lower{
+  background-color: red;
+  color: #ffffff;
+
+ 
+}
+.footer-lower li a {
+  text-decoration: none;
+  color: #ffffff;
+ 
+}
+
   .div-inline {
     display: inline;
     padding-right: 5px;
@@ -2466,6 +2491,10 @@ textarea { display: block; margin-bottom: 10px; }
 .mobimenu2{
   display: none;
 }
+
+.mobimenu2-wraper{
+  z-index: 999; 
+}
 /************************************************************* */
 
 
@@ -2677,6 +2706,15 @@ textarea { display: block; margin-bottom: 10px; }
 
 .mobimenu2 {
   display: block;
+}
+
+.mobimenu2-wraper{
+  z-index: 999; 
+  position: fixed; 
+  top: 0px; 
+  right: 0; 
+  
+  background-color: red;
 }
 
 

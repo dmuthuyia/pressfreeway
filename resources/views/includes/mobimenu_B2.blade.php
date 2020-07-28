@@ -1,7 +1,7 @@
 
-		<div style="z-index: 999; position: fixed; top: 20px; right: 0;">
+		<div style="" class="mobimenu2-wraper">
 
-          <div>
+          <div style="float-right;">
             <a href="" id="share_fb" target="_blank"><img class="image-x- mobimenu2"  src="../assets/images/app/menu-3.png" alt="Facebook" /></a>
           </div>
 

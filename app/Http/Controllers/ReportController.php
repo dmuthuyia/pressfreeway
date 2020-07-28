@@ -5,11 +5,10 @@ namespace pressfreeway\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Mail;
-use pressfreeway\Article;
 use pressfreeway\Token;
 use View;
 
-class DdsController extends Controller
+class ReportController extends Controller
 {
     public function getHome()
     {
@@ -26,17 +25,8 @@ class DdsController extends Controller
 
     }
 
-    public function getMonday()
+    public function getIndex()
     {
-
-        //$categories = Genrey::all(['id', 'title']);
-        //$categories = Genrey::all();
-        //$interested = User::all()->get()->random(4);
-        // $interested = User::all()->random(4);
-
-        //$tokens = Token::all();
-        $articles = Article::orderBy('created_at', 'desc')->paginate(12);
-        return view('articles.monday', ['articles' => $articles]);
 
     }
 
