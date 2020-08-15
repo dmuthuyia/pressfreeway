@@ -12,9 +12,6 @@ body {
   background-color: #ffffff;
 }
 
-.mediatab2 {
-}
-
 .mediatab2 p {
   font-size: 14px;
 }
@@ -25,9 +22,76 @@ body {
   font-weight: bold;
 }
 
+.mediatab3 {
+  padding: 15px;
+  background-color: #ffffff;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.mediatab3 p {
+  padding-top: 0px;
+  font-size: 14px;
+}
+
+.mediatab3 H3 {
+  font-size: 18px;
+  font-style: initial;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.mediatab3 a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+.mediatab4 {
+  padding: 10px;
+  background-color: gray;
+  color: white;
+  border-radius: 0px 0px 20px 20px;
+  min-height: 150px;
+}
+
+.mediatab4 p {
+  padding-top: 0px;
+  font-size: 12px;
+}
+
+.mediatab4 H3 {
+  font-size: 18px;
+  font-style: initial;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.mediatab4 a {
+  text-decoration: none;
+  color: #f4f6f6;
+  text-align: center;
+}
+
+.tabHeight1 {
+  height: 340px;
+  overflow: hidden;
+}
+
+.tabHeight1-image {
+  height: 150px;
+  overflow: hidden;
+}
+
+.tabHeight2-image {
+  height: 200px;
+  overflow: hidden;
+}
+
 .newsHeader1 {
   /*font-family: "Ubuntu Condensed";
   font-family: "Eagle Lake";*/
+  padding-top: 15px;
 }
 
 .newsHeader1 a {
@@ -35,11 +99,17 @@ body {
   font-size: 18px;
   color: black;
   font-weight: lighter;
+  padding-top: 10px;
 }
 
 .interactionTab-1 {
   margin-top: 5px;
   font-size: 12px;
+}
+
+.interactionTab-1 a {
+  font-size: 12px;
+  color: red;
 }
 
 .page-margin {
@@ -61,4 +131,15 @@ body {
 
 .clearfix1 {
   all: none;
+}
+
+.media-links1 {
+  color: black;
+}
+
+.answer1 {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 14px;
+  color: rgb(11, 79, 167);
+  padding-left: 0%;
 }

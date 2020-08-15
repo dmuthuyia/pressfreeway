@@ -29,14 +29,14 @@ Route::group(['middleware' => ['web']], function () {
     //});
 
     Route::get('/', [
-        'uses' => 'DdsController@getMonday',
+        'uses' => 'DdsController@getTuesday',
         'as' => 'home',
 
     ]);
 
-    Route::get('/signinfrm', function () {
+    Route::get('/login', function () {
         return view('users.login');
-    })->name('signinfrm');
+    })->name('login');
 
     Route::get('/users/register', function () {
         return view('users.register');
@@ -61,6 +61,18 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/contact-us', [
         'uses' => 'DdsController@postContact',
         'as' => 'contact',
+
+    ]);
+
+    Route::get('/region/{name}', [
+        'uses' => 'DdsController@getCategory1',
+        'as' => 'region',
+
+    ]);
+
+    Route::get('/category/{name}', [
+        'uses' => 'DdsController@getCategory2',
+        'as' => 'region',
 
     ]);
 
@@ -101,6 +113,12 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/profilepicture/{filename}', [
         'uses' => 'UserController@getProfilePicture',
         'as' => 'profile.picture',
+    ]);
+
+    Route::get('/writer/{id}', [
+        'uses' => 'UserController@profileShow',
+        'as' => 'writer.show',
+        //'middleware' => 'auth'
 
     ]);
 
@@ -223,18 +241,18 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/article/new', [
         'uses' => 'ArticleController@getNew',
         'as' => 'article.new',
-        //'middleware' => 'auth'
+        'middleware' => 'auth',
 
     ]);
 
     Route::post('/article/new/post', [
         'uses' => 'ArticleController@postNew',
         'as' => 'article.post',
-        //'middleware' => 'auth'
+        'middleware' => 'auth',
 
     ]);
 
-    Route::get('/article/{id}', [
+    Route::get('/article/{url}', [
         'uses' => 'ArticleController@getShow',
         //'as' => 'article.show',
         //'middleware' => 'auth'
@@ -243,7 +261,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::post('/update/article', [
         'uses' => 'ArticleController@updatearticle',
-        //'as' => 'article.update'
+        'as' => 'article.update',
 
     ]);
 

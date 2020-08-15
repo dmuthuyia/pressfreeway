@@ -40,7 +40,7 @@
           </div>
 
           <div>
-            <a href="http://reddit.com/submit?url=https://calmensnaturals.co.ke&amp;title=Simple Share Buttons" id="share_reddit" target="_blank"><img class="image-x-" src="./assets/images/social/reddit.png" alt="Reddit" /></a>
+            <a href="http://reddit.com/submit?url=https://calmensnaturals.co.ke&amp;title=Simple Share Buttons" id="share_reddit" target="_blank"><img class="image-x-" src="../assets/images/social/reddit.png" alt="Reddit" /></a>
           </div>
 
 <script>

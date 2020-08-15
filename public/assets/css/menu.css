@@ -92,8 +92,184 @@
   margin-top: 35px;
 }
 
+.toolbar2 {
+  min-height: 50px;
+  width: 100%;
+  background-color: #ffffff;
+  /*margin-top: 35px;*/
+}
+
+/**************************************************************/
+/*WAZO17 MENU*/
+
+.wazo30 {
+  display: flex;
+  width: 90%;
+  height: 40px;
+  vertical-align: middle;
+  z-index: 999;
+}
+
+.wazo30 li {
+  float: left;
+
+  width: 100px;
+  height: 35px;
+
+  text-align: center;
+
+  /*border-right: black 1px solid;*/
+  text-decoration: none;
+  list-style-type: none;
+  line-height: 35px;
+}
+
+.wazo30menu li a {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  color: black;
+  font-size: 14px;
+}
+
+.wazo30menu li a:hover {
+  color: gray;
+}
+
+.wazo30submenu {
+  display: none;
+}
+
+.wazo30submenu li a {
+  clear: both;
+  background-color: lightblue;
+  border: gray 1px solid;
+  width: 100px;
+  text-align: left;
+  border-top: black 1px solid;
+  padding: 5px;
+  font-size: 14px;
+  position: relative;
+  left: 0;
+
+  z-index: 999;
+  border-radius: 5px;
+}
+.wazo30submenu ul {
+  position: relative;
+}
+.wazo30 ul li:hover > ul {
+  display: block;
+}
+
+.wazo30subsubmenu {
+  display: none;
+}
+
+.wazo30submenu ul {
+  margin-top: -35px;
+  width: 100px;
+}
+
+.wazo30subsubmenu li a {
+  background-color: #800000;
+  border: gray 1px solid;
+  width: 100px;
+  text-align: left;
+  border-top: black 1px solid;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.fa .fa-home {
+  width: 20px;
+}
+
+.wazo30 ul li:hover > ul li:hover > ul {
+  display: block;
+}
+
+#wazo30b {
+  display: none;
+}
+
+.logoText1 {
+  color: red;
+  font-size: 18px;
+}
+
+.newFontClass {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.newFontClass li a {
+  font-size: 12px;
+  width: 100px;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page dXY-container to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .dXY-container {
+  padding-top: 400px;
+}
+
+.mediaHeader1 {
+  border-left: orangered 4px solid;
+  color: red;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.mediaHeader2 {
+  border-left: black 4px solid;
+  color: red;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.wazo30mobitoolbartweak {
+  display: flex;
+  flex-direction: row;
+  height: 45px;
+  padding: 5px;
+  background-color: #ffffff;
+}
+
+.wazo30mobitoolbartweak a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
 @media (max-width: 1200px) {
   .toolbar1 {
     margin-top: 0px;
+  }
+  #wazo30a {
+    display: none;
+  }
+  #wazo30b {
+    display: none;
+  }
+  .menuHeaderUpper {
+    display: none;
+  }
+
+  #mobimenu-wrap-1 {
+    width: 200px;
+    background-color: #beb9d2;
+    margin-left: 10px;
+    position: absolute;
+    display: none;
+    border-radius: 10px;
   }
 }

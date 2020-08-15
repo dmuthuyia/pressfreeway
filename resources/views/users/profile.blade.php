@@ -2,184 +2,136 @@
 
 @section('kichwa')
 
-    Kenyan love: {{ $user->UserName }}'s profile
+Profile: {{ $user->UserName }}'s profile
 
 @endsection
 
 @section('sebule')
 
-<div class="divfold57">
-    <div class="col-md-7">
-        <div class="fireplace2showsingles">
-            <h1>{{ $user->UserName }} | id: {{ $user->id }}</h1>
-            <div class="fireplace2showimage">
+<?php
+include app_path() . '/includes/functions.php';
+?>
 
-                <a href="#" data-toggle="modal" data-target="#showimg"><img class="modal-content" style="    border-radius: 5px;cursor: pointer;transition: 0.3s; width:200px;" src="<?php echo asset("uploads/avatars/$user->mypic") ?>"></img></a>
-                <!-- The Modal -->
-
-            </div>
+<div class="dX" style="padding-top: 50px;">
+    <div class="dY-6">
+        <div class="mediatab3 mediaHeader1">
+            {{ $user->UserName }} {{ $user->LastName }}
+        </div>
+    </div>
+</div>
+<div class="dX" style="">
+    <div class="dY-2">
+        <div class="mediatab3" style="overflow:hidden;">
+            <img class="" style="border-radius: 5px; width: 100%;" src="<?php echo asset("uploads/avatars/$user->mypic") ?>"></img>
+        </div>
+    </div>
+    <div class="dY-2">
+        <div class="mediatab3">
+            <?php
+$gendershow = ($user->is_female == 1) ? 'Female' : 'Male';
+?>
+            <ul>
+                <li>Gender: <span class="answer1"> {{ $gendershow }} </span></li>
+                <li>Country: <span class="answer1">{{ $user->Country }}</span></li>
+                <li>City: <span class="answer1">{{ $user->City }}</span></li>
+            </ul>
 
             {{ $user->ShortBio }}
+        </div>
+    </div>
+    <div class="dY-2">
+        <div class="mediatab3">
+            <ul>
+                <li>Rating: <span class="answer1"></span></li>
+                <li>Writer since: <span class="answer1"> </span></li>
+                <li>Number of articles: <span class="answer1"> {{$totalArticles}} </span></li>
+                <li>Contact: <a href=""> <span class="answer1">Yes</a></span></li>
 
+            </ul>
+        </div>
+    </div>
+</div>
 
-            <div style="padding: 10px; margin-bottom: 10px;">
+<div class="dX" style="">
+    <div class="dY-3 mediatab2">
+        <div class="mediatab3 mediaHeader1">
+            <h6 style="font-weight:bold">{{ $user->FirstName }} {{ $user->LastName }} Recent articles </h6>
+        </div>
+    </div>
+    <div class="dY-3 mediatab2">
+        <div class="mediatab3 mediaHeader1">
+            <h6 style="font-weight:bold">{{ $user->FirstName }} {{ $user->LastName }} Popular articles </h6>
+        </div>
+    </div>
+</div>
 
+<div class="dX" style="">
+    <div class="dY-3 mediatab2">
+        <div class="mediatab3">
+            @foreach($authorArticles as $authorArticle)
+            <div class="dX dxy-border-4">
 
-            <a href="#" class="btn btn-info btn-sm pull-right" data-toggle="modal" data-target="#editprof"><i class="glyphicon glyphicon-plus-sign"></i>Edit</a>
+                <div class="dY-4">
+                    <h3> <a class="media-links1" href="{{ url('article', [$authorArticle->url]) }}" id="">{{$authorArticle->title}}</a></h3>
 
+                    <p>
+                        <?php
 
-            </div>
+$content = html_cut($authorArticle->article_body, 100);
 
-
-            Gender:
-
-
-            <div class="divfold56singles">
-
-            <?php
-$gendershow = (Auth::user()->is_female == 1) ? 'Female' : 'Male';
+$formatted_article_body = htmlspecialchars_decode($content);
+echo ($formatted_article_body);
 ?>
-            {{  $gendershow }}
 
-
-            </div>
-            Age:
-
-            <div class="divfold56singles">
-
-                {{ $user->Age }}
-
-            </div>
-            Location:
-
-
-            <div class="divfold56singles">
-
-                {{ $user->City }}
-
-            </div>
-            Country:
-
-            <div class="divfold56singles">
-
-                {{ $user->Country }}
-
-            </div>
-
-        </div>
-    </div>
-
-    <div class="col-md-3">
-
-
-
-    </div>
-
-
-
-</div>
-
-
-
-
-<div class="divfold57">
-</div>
-
-
-
-
-
-
-
-<div class="modal" id="showimg" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close"
-          data-dismiss="modal"
-          aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"> Kenyan Love | {{ $user->UserName }} </h4>
-      </div>
-      <div class="modal-body" style="height: 700px;">
-
-        <div style="text-align: center; height: 80%;  width: 100; overflow: hidden;">
-          <img class="modal-content" style="max-height: 100%; max-height: 100%;" src="<?php echo asset("uploads/avatars/$user->mypic") ?>"></img>
-        </div>
-
-        <div>
-
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button"
-           class="btn btn-default"
-           data-dismiss="modal">Close</button>
-
-
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="modal" id="editprof" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-
-            <div class="modal-header">
-              <button type="button" class="close"
-              data-dismiss="modal"
-              aria-label="Close">
-              <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"> Kenyan Love | Edit Profile {{ $user->UserName }} </h4>
-              </div>
-
-            <div class="modal-body" style="">
-
-
-
-
-
-                    {{ Form::model($user, array('url' => array('update/profile'))) }}
-
-                    @include("users._form")
-
-
-                    <div class="divfold50">
-                        <div class="form-actions">
-
-
-
-                             <button type="submit" class="btn btn-primary">
-                                <i class="fa fa-btn fa-user"></i> Update
-                             </button>
-                        </div>
-
+                    </p>
+                    <div class="interactionTab-1">
+                        By: <a href="{{ url('writer', [$authorArticle->user->id]) }}" id="">{{ $authorArticle->user->FirstName }} {{ $authorArticle->user->LastName }}</a>
                     </div>
-                    {!! Form::close() !!}
-
-
+                </div>
+                <div class="dY-2">
+                    <img style="width: 100%;" src="<?php echo asset("uploads/articles/" . $authorArticle->article_img) ?>" class="image-t-left"></img>
+                </div>
 
 
 
             </div>
-
-
-
-        <div class="modal-footer">
-            <button type="button"
-               class="btn btn-default"
-               data-dismiss="modal">Close</button>
-            </span>
+            @endforeach
         </div>
+    </div>
+    <div class="dY-3 mediatab2">
+        <div class="mediatab3">
+            @foreach($authorArticles as $authorArticle)
+            <div class="dX dxy-border-4">
+
+                <div class="dY-4">
+                    <h3> <a class="media-links1" href="{{ url('article', [$authorArticle->url]) }}" id="">{{$authorArticle->title}}</a></h3>
+
+                    <p>
+                        <?php
+
+$content = html_cut($authorArticle->article_body, 100);
+
+$formatted_article_body = htmlspecialchars_decode($content);
+echo ($formatted_article_body);
+?>
+
+                    </p>
+                    <div class="interactionTab-1">
+                        By: <a href="{{ url('writer', [$authorArticle->user->id]) }}" id="">{{ $authorArticle->user->FirstName }} {{ $authorArticle->user->LastName }}</a>
+                    </div>
+                </div>
+                <div class="dY-2">
+                    <img style="width: 100%;" src="<?php echo asset("uploads/articles/" . $authorArticle->article_img) ?>" class="image-t-left"></img>
+                </div>
+
+
+
+            </div>
+            @endforeach
         </div>
-
-
     </div>
 </div>
+
 
 
 @endsection

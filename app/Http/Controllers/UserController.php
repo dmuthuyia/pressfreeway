@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use pressfreeway\Article;
 use pressfreeway\User;
 use Validator;
 use View;
@@ -136,7 +137,8 @@ class UserController extends Controller
     {
         // validate the info, create rules for the inputs
         $rules = array(
-            'email' => 'required|email', // make sure the email is an actual email
+            //'email' => 'required|email', // make sure the email is an actual email
+            'email' => 'required', // make sure the email is an actual email
             'password' => 'required|alphaNum|min:3', // password can only be alphanumeric and has to be greater than 3 characters
         );
 
@@ -145,7 +147,8 @@ class UserController extends Controller
 
         // if the validator fails, redirect back to the form
         if ($validator->fails()) {
-            return Redirect::to('signinfrm')
+            echo "<h1 style='background-color:pink; width:100%;height:50; padding:10px;'> Please enter email/username and password </h1>";
+            return Redirect::to('login')
                 ->withErrors($validator) // send back all errors to the login form
                 ->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
 
@@ -200,14 +203,14 @@ class UserController extends Controller
             $email = $request['email'];
             $password = $request['password'];
 
-            $user = User::where('email', '=', $email)->first();
+            $user = User::where('email', '=', $email)->orWhere('UserName', '=', $email)->first();
             if (!$user) {
                 //return response()->json(['success' => false, 'message' => 'Login Fail, please check email id']);
-                echo 'Failed! Check email and password';
+                echo "<h1 style='background-color:pink; width:100%;height:50; padding:10px;'> Failed! Check email and password </h1>";
             }
             if (!Hash::check($password, $user->password)) {
                 //return response()->json(['success' => false, 'message' => 'Login Fail, pls check password']);
-                echo 'Failed! Check email and password';
+                echo "<h1 style='background-color:pink; width:100%;height:50; padding:10px;'> Failed! Wrong password </h1>";
             } else {
                 //return response()->json(['success' => true, 'message' => 'success', 'data' => $user]);
                 Auth::loginUsingId($user->id, true);
@@ -238,7 +241,36 @@ class UserController extends Controller
 
     public function getProfile()
     {
-        return view('users.profile', ['user' => Auth::user()]);
+        //return view('users.profile', ['user' => Auth::user()]);
+
+        //$id = Auth::id();
+        $id = Auth::user()->id;
+
+        $user = User::where('id', $id)->firstOrFail();
+
+        $authorArticles = Article::where('user_id', '=', $id)->orderBy('created_at', 'desc')->take(5)->get();
+
+        $totalArticles = Article::where('user_id', '=', $id)->count();
+
+        $writerSince = Article::where('user_id', '=', $id)->orderBy('created_at', 'asc')->firstOrFail();
+
+        return view('users.show')->with(['user' => $user, 'authorArticles' => $authorArticles, 'totalArticles' => $totalArticles, 'writerSince' => $writerSince]);
+
+    }
+
+    public function profileShow($id)
+    {
+
+        $user = User::where('id', $id)->firstOrFail();
+
+        $authorArticles = Article::where('user_id', '=', $id)->orderBy('created_at', 'desc')->take(5)->get();
+
+        $totalArticles = Article::where('user_id', '=', $id)->count();
+
+        $writerSince = Article::where('user_id', '=', $id)->orderBy('created_at', 'asc')->first();
+
+        return view('users.show')->with(['user' => $user, 'authorArticles' => $authorArticles, 'totalArticles' => $totalArticles, 'writerSince' => $writerSince]);
+
     }
 
     public function saveProfile(Request $request)

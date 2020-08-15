@@ -11,168 +11,129 @@
 
 <div class="dX">
 
-    <div class="dY-6">
+    <div class="dY-3" style="background-color:#DCDCDC;">
+        <form enctype="multipart/form-data" class="form-horizontal" role="form" method="POST" action="{{ route('signup') }}">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            {{ csrf_field() }}
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <table class="table">
+                <tr>
+                    <td> First Name </td>
+                    <td><input id="FirstName" type="text" class="form-control" name="FirstName" value="{{ old('FirstName') }}">
+                        @if ($errors->has('FirstName'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('FirstName') }}</strong>
+                            </span>
+                        @endif</td>
+                </tr>
+                <tr>
+                    <td> Last Name</td>
+                    <td> <input id="LastName" type="text" class="form-control" name="LastName" value="{{ old('LastName') }}">
 
+                        @if ($errors->has('LastName'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('LastName') }}</strong>
+                            </span>
+                        @endif</td>
+                </tr>
+                <tr>
+                    <td> User Name</td>
+                    <td> <input id="UserName" type="text" class="form-control" name="UserName" value="{{ old('UserName') }}">
 
+                        @if ($errors->has('UserName'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('UserName') }}</strong>
+                            </span>
+                        @endif</td>
+                </tr>
+                <tr>
+                    <td> Date of birth</td>
+                    <td> {{ Form::select('dobyear', [
+                            '1919' => '1919',
+                            '1920' => '1920',
+                            '1921' => '1921',
+                            '1922' => '1922',
+                            '1923' => '1923',
+                            '1924' => '1924',
+                            '1925' => '1925',
+                            '1926' => '1926',
+                            '1927' => '1927',
+                            '1928' => '1928',
+                            '1929' => '1929',
+                            '1930' => '1930',
+                            '1931' => '1931',
+                            '1932' => '1932',
+                            '1933' => '1933',
+                            '1934' => '1934',
+                            '1935' => '1935',
+                            '1936' => '1936',
+                            '1937' => '1937',
+                            '1938' => '1938',
+                            '1939' => '1939',
+                            '1940' => '1940',
+                            '1941' => '1941',
+                            '1942' => '1942',
+                            '1943' => '1943',
+                            '1944' => '1944',
+                            '1945' => '1945',
+                            '1946' => '1946',
+                            '1947' => '1947',
+                            '1948' => '1948',
+                            '1949' => '1949',
+                            '1950' => '1950',
+                            '1951' => '1951',
+                            '1952' => '1952',
+                            '1953' => '1953',
+                            '1954' => '1954',
+                            '1955' => '1955',
+                            '1956' => '1956',
+                            '1957' => '1957',
+                            '1958' => '1958',
+                            '1959' => '1959',
+                            '1960' => '1960',
+                            '1961' => '1961',
+                            '1962' => '1962',
+                            '1963' => '1963',
+                            '1964' => '1964',
+                            '1965' => '1965',
+                            '1966' => '1966',
+                            '1967' => '1967',
+                            '1968' => '1968',
+                            '1969' => '1969',
+                            '1970' => '1970',
+                            '1971' => '1971',
+                            '1972' => '1972',
+                            '1973' => '1973',
+                            '1974' => '1974',
+                            '1975' => '1975',
+                            '1976' => '1976',
+                            '1977' => '1977',
+                            '1978' => '1978',
+                            '1979' => '1979',
+                            '1980' => '1980',
+                            '1981' => '1981',
+                            '1982' => '1982',
+                            '1983' => '1983',
+                            '1984' => '1984',
+                            '1985' => '1985',
+                            '1986' => '1986',
+                            '1987' => '1987',
+                            '1988' => '1988',
+                            '1989' => '1989',
+                            '1990' => '1990',
+                            '1991' => '1991',
+                            '1992' => '1992',
+                            '1993' => '1993',
+                            '1994' => '1994',
+                            '1995' => '1995',
+                            '1996' => '1996',
+                            '1997' => '1997',
+                            '1998' => '1998',
+                            '1999' => '1999',
+                            ], '1999') }}
 
-
-
-    <form enctype="multipart/form-data" class="form-horizontal" role="form" method="POST" action="{{ route('signup') }}">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        {{ csrf_field() }}
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-
-                    <div class="" >
-                    <div class="col-md-6" >
-
-
-
-        <div class="divfold50inner1" style="boarder-radius: 5px; border: 0px black solid; padding-left 10px; background: #fff;" >
-
-
-
-
-
-
-            <div class="field">
-                <label for="FirstName">First Name</label>
-
-                <input id="FirstName" type="text" class="form-control" name="FirstName" value="{{ old('FirstName') }}">
-
-                @if ($errors->has('FirstName'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('FirstName') }}</strong>
-                    </span>
-                @endif
-            </div>
-
-
-            <div class="field">
-                <label for="LastName">Last Name</label>
-
-                <input id="LastName" type="text" class="form-control" name="LastName" value="{{ old('LastName') }}">
-
-                @if ($errors->has('LastName'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('LastName') }}</strong>
-                    </span>
-                @endif
-
-            </div>
-
-
-            <div class="field">
-                <label for="UserName">Company Name</label>
-
-                <input id="UserName" type="text" class="form-control" name="UserName" value="{{ old('UserName') }}">
-
-                @if ($errors->has('UserName'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('UserName') }}</strong>
-                    </span>
-                @endif
-
-            </div>
-
-
-            <div class="field">
-                <label for="date_of_birth">Date of birth</label> /:(will be private)
-
-
-                <div class="firedateshow">
-
-                <!-- {{ Form::selectYear('dobyear', 2013, 2015, 2014, ['class' => 'btn-warning']) }} -->
-
-
-{{ Form::select('dobyear', [
-'1919' => '1919',
-'1920' => '1920',
-'1921' => '1921',
-'1922' => '1922',
-'1923' => '1923',
-'1924' => '1924',
-'1925' => '1925',
-'1926' => '1926',
-'1927' => '1927',
-'1928' => '1928',
-'1929' => '1929',
-'1930' => '1930',
-'1931' => '1931',
-'1932' => '1932',
-'1933' => '1933',
-'1934' => '1934',
-'1935' => '1935',
-'1936' => '1936',
-'1937' => '1937',
-'1938' => '1938',
-'1939' => '1939',
-'1940' => '1940',
-'1941' => '1941',
-'1942' => '1942',
-'1943' => '1943',
-'1944' => '1944',
-'1945' => '1945',
-'1946' => '1946',
-'1947' => '1947',
-'1948' => '1948',
-'1949' => '1949',
-'1950' => '1950',
-'1951' => '1951',
-'1952' => '1952',
-'1953' => '1953',
-'1954' => '1954',
-'1955' => '1955',
-'1956' => '1956',
-'1957' => '1957',
-'1958' => '1958',
-'1959' => '1959',
-'1960' => '1960',
-'1961' => '1961',
-'1962' => '1962',
-'1963' => '1963',
-'1964' => '1964',
-'1965' => '1965',
-'1966' => '1966',
-'1967' => '1967',
-'1968' => '1968',
-'1969' => '1969',
-'1970' => '1970',
-'1971' => '1971',
-'1972' => '1972',
-'1973' => '1973',
-'1974' => '1974',
-'1975' => '1975',
-'1976' => '1976',
-'1977' => '1977',
-'1978' => '1978',
-'1979' => '1979',
-'1980' => '1980',
-'1981' => '1981',
-'1982' => '1982',
-'1983' => '1983',
-'1984' => '1984',
-'1985' => '1985',
-'1986' => '1986',
-'1987' => '1987',
-'1988' => '1988',
-'1989' => '1989',
-'1990' => '1990',
-'1991' => '1991',
-'1992' => '1992',
-'1993' => '1993',
-'1994' => '1994',
-'1995' => '1995',
-'1996' => '1996',
-'1997' => '1997',
-'1998' => '1998',
-'1999' => '1999',
-], '1999') }}
-
-
-
-                {{ Form::selectMonth('dobmonth', 1, ['class' => 'btn-info']) }}
-                <?php
+                        {{ Form::selectMonth('dobmonth', 1, ['class' => 'btn-info']) }}
+<?php
 
 // build days menu
 echo '<select name="dobday">' . PHP_EOL;
@@ -182,55 +143,44 @@ for ($d = 1; $d <= 31; $d++) {
 echo '</select>' . PHP_EOL;
 ?>
 
-                </div>
+                        @if ($errors->has('date_of_birth'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('date_of_birth') }}</strong>
+                            </span>
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <td> Gender</td>
+                    <td>
+                        <div class="dX">
+                            <div class="dY-3">
+                                <label for="male">Male</label>
+                            </div>
+                            <div class="dY-3">
+                                <input type="radio" id="0" name="is_female" value="0" checked>
+                            </div>
+                        </div>
+
+                        <div class="dX">
+                            <div class="dY-3">
+                            <label for="female">Female</label>
+                            </div>
+                            <div class="dY-3">
+                            <input style="" type="radio" id="1" name="is_female" value="1">
+                            </div>
+                        </div>
 
 
-                @if ($errors->has('date_of_birth'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('date_of_birth') }}</strong>
-                    </span>
-                @endif
-
-
-            </div>
-
-
-
-            <div class="field">
-                <label for="is_female">Gender</label><br />
-
-                {{ Form::label('is_female', 'Female') }}
-                {{ Form::radio('is_female', 1, true, ['class' => 'field']) }}
-
-                {{ Form::label('is_female', 'Male') }}
-
-                {{ Form::radio('is_female', 0, false, ['class' => 'field']) }}
-
-
-
-            </div>
-
-
-            <div class="field">
-
-                <label>Profile image</label>
-                <input type="file" name="mypic">
-
-            </div>
-
-        </div>
-
-        <div class="divfold50inner1">
-
-
-            <div class="field">
-
-            </div>
-
-            <div class="field">
-                <div class="divfold1b">
-                    <label for="Country">Country</label><br />
-
+                    </td>
+                </tr>
+                <tr>
+                    <td> Profile image</td>
+                    <td> <input type="file" name="mypic"></td>
+                </tr>
+                <tr>
+                    <td> Country</td>
+                    <td>
                     {{ Form::select('Country',
 
                         [
@@ -472,130 +422,86 @@ echo '</select>' . PHP_EOL;
                         "Yemen"  =>  "Yemen",
                         "Yugoslavia"  =>  "Yugoslavia",
                         "Zambia"  =>  "Zambia",
-                        "Zimbabwe"  =>  "Zimbabwe"], "United States", ['class' => 'form-control'])
+                        "Zimbabwe"  =>  "Zimbabwe"], "Kenya", ['class' => 'form-control'])
 
                         }}
 
-                </div>
-            </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td> City</td>
+                    <td> <input id="City" type="text" class="form-control" name="City" value="{{ old('City') }}">
 
-            <div class="field">
-                <label for="City">City</label>
+                            @if ($errors->has('City'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('City') }}</strong>
+                                </span>
+                            @endif</td>
+                </tr>
+                <tr>
+                    <td> E-Mail Address</td>
+                    <td> <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
 
-                <input id="City" type="text" class="form-control" name="City" value="{{ old('City') }}">
+                        @if ($errors->has('email'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif</td>
+                </tr>
+                <tr>
+                    <td> Password</td>
+                    <td> <input id="password" type="password" class="form-control" name="password">
 
-                @if ($errors->has('City'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('City') }}</strong>
-                    </span>
-                @endif
+                        @if ($errors->has('password'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif</td>
+                </tr>
+                <tr>
+                    <td> Confirm Password</td>
+                    <td> <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
 
-            </div>
-
-
-            <div class="field">
-                <div class="divfold1b">
-
-
-
-                </div>
-            </div>
-
-
-        </div>
-
-    </div>
-
-    <div class="col-md-6">
-
-
-
-
-        <div class="divfold50inner1">
-
-
-
-            <div class="field">
-                <label for="email">E-Mail Address</label>
-
-                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
-
-                    @if ($errors->has('email'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('email') }}</strong>
-                        </span>
-                    @endif
-            </div>
-
-            <div class="field">
-                <label for="password">Password</label>
-
-                     <input id="password" type="password" class="form-control" name="password">
-
-                    @if ($errors->has('password'))
-                         <span class="help-block">
-                             <strong>{{ $errors->first('password') }}</strong>
-                         </span>
-                     @endif
-
-            </div>
-
-            <div class="field">
-                <label for="password-confirm">Confirm Password</label>
-
-                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
-
-                     @if ($errors->has('password_confirmation'))
+                        @if ($errors->has('password_confirmation'))
                         <span class="help-block">
                             <strong>{{ $errors->first('password_confirmation') }}</strong>
                         </span>
-                    @endif
-            </div>
+                        @endif</td>
+                </tr>
+                <tr>
+                    <td> accept terms</td>
+                    <td> {{ Form::checkbox('accepted_terms', 1, null) }}
+                        {{ $errors->first('accepted_terms') }}
+</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>
+                        <button type="submit" class="btn btn-primary" style="float:right;">
+                            <i class="fa fa-btn fa-user"></i> Register
+                        </button></td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                </tr>
 
+            </table>
+        </form>
+    </div>
 
-        </div>
-
+    <div class="dY-3">
 
 
     </div>
-
 </div>
-
-<div class="divfold50">
-    <div class="form-actions">
-
-        <label for="accepted_terms">accept terms</label>
-        {{ Form::checkbox('accepted_terms', 1, null) }}
-        {{ $errors->first('accepted_terms') }}
-
-         <button type="submit" class="btn btn-primary">
-            <i class="fa fa-btn fa-user"></i> Register
-         </button>
-    </div>
-
-</div>
-
-
-
-
-
-
-                    {!! csrf_field() !!}
-                    </form>
-
-
-
-
-
-
-
-
-    </div>
-
-</div>
-
-
-
-
 
 @endsection

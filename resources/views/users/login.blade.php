@@ -2,7 +2,7 @@
 
 @section('kichwa')
 
-    Carison: Buy rubber stamps, Acrylic stamps and company seals in Kenya
+    Pressfreeway Login
 
 @endsection
 
@@ -15,7 +15,7 @@
 
                             <div class="dX">
                                 <div class="dY-3">
-                                    E-mail
+                                    E-mail / Username
                                 </div>
                                 <div class="dY-3">
                                     <input class="form-control" type="text" name="email" id="email">

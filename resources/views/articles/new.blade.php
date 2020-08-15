@@ -84,9 +84,6 @@
 
                     <div class="dX ">
                         <div class="dY-6" >
-                            <label for="url">Url</label>
-
-                            <input id="url" type="text" class="form-control" name="url" value="{{ old('url') }}" style="width: 100%;">
 
                         </div>
                     </div>

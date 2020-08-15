@@ -55,14 +55,14 @@
           <ul class="wazo17submenu" style="width:90px;">
 
             <li><a href="{{ route('registration form') }}" style="width:90px;">Sign up</a></li>
-            <li><a href="{{ route('signinfrm') }}" style="width:90px;">login</a></li>
+            <li><a href="{{ route('login') }}" style="width:90px;">login</a></li>
           </ul>
     </li>
     @else
     <li style="float: right; width: 90px;"><a href="">{{Auth::user()->FirstName}}</a>
           <ul class="wazo17submenu" style="width:90px;">
 
-            <li><a href="{{ route('profile') }}" style="width:90px;">Profile</a></li>
+            <li><a href="{{ url('writer', [Auth::user()->id]) }}" style="width:90px;">Profile</a></li>
 
             <li><a href="{{ route('logout') }}" style="width:90px;">Logout</a></li>
           </ul>
